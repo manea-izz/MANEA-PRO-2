@@ -152,10 +152,10 @@ const DiffText: React.FC<{ diffResult: ReturnType<typeof diffStrings>; type: 'ad
         <span className="font-mono text-sm whitespace-pre-wrap break-all leading-relaxed text-brand-gray-200">
             {diffResult.map((part, index) => {
                 if (type === 'added') {
-                    if (part.added) return <span key={index} className="bg-green-500/30 text-green-100 rounded">{part.value}</span>;
+                    if (part.added) return <span key={index} className="bg-green-500/30 text-green-100 rounded px-1">{part.value}</span>;
                     if (!part.removed) return <span key={index}>{part.value}</span>;
                 } else { // type === 'removed'
-                    if (part.removed) return <span key={index} className="bg-red-500/30 text-red-100 rounded line-through">{part.value}</span>;
+                    if (part.removed) return <span key={index} className="bg-red-500/30 text-red-100 rounded line-through px-1">{part.value}</span>;
                     if (!part.added) return <span key={index}>{part.value}</span>;
                 }
                 return null;
